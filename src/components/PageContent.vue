@@ -13,7 +13,7 @@
 
 <script>
 import ButtonComponent from './ButtonComponent.vue'
-import database from '../firebase.js'
+import database from '../firebase.js' //import from firebase
 export default {
   data(){
     return{
@@ -24,7 +24,7 @@ export default {
     'buttonComponent':ButtonComponent
   },
   methods:{
-    fetchItems:function(){
+    fetchItems:function(){ //fetch items from database on firebase
       let item={}
       //Get all the items from DB
       database.collection('items').get().then((querySnapShot)=>{
@@ -41,9 +41,9 @@ export default {
     },
     deleteItem:function(index,item){
       //Deleting from DB
-      database.collection('items').doc(item.id).delete()
+      database.collection('items').doc(item.id).delete() //delete from database in firebase using id
       //Deleting from the itemsList Array
-      this.itemsList.splice(index,1)
+      this.itemsList.splice(index,1) //remove from itemList
       //Msg to be displayed. Can be made as an alert
       console.log("Item Deleted Successfully")
     }

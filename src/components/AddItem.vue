@@ -4,9 +4,25 @@
     <form id="fm1">
         <label>Item Name</label>
         <input type="text" v-model.lazy="item.name" required/>
-        <label>Item Category</label>
+        
+        <label> Grocery Type </label>
+        <select v-model="selectedtype">
+          <option disabled value="">Please select one</option>
+          <option>Food</option>
+          <option>Household Items</option>
+        </select>
+
+        <label>Specific Category of Item</label>
         <input type="text" v-model.lazy="item.category"/>
-        <button v-on:click.prevent="addItem">Add Item</button>
+
+        <form>
+        <label class = 'radioi-inline' for="one">Diminishable<input type="radio" id="one" value="Diminishable" v-model.lazy="item.diminish"/></label>
+        <label class = 'radioi-inline' for="two">Non-dimishable<input type="radio" id="two" value="Non-diminishable" v-model.lazy="item.diminish"/></label>
+        
+        </form>
+        <p>
+        <button v-on:click.prevent="addItem">Add Item</button></p>
+
         
     </form>
   </div>
@@ -14,7 +30,7 @@
 
 <script>
 
-import database from '../firebase.js'
+import database from '../firebase.js' //have database variable
 export default {
 
   data(){
@@ -22,7 +38,9 @@ export default {
         msg:"Add Item",
         item:{
           name:'',
-          category:''
+          category:'',
+          diminish:'',
+          selectedtype:''
         },
         
         
@@ -34,6 +52,7 @@ export default {
           database.collection('items').doc().set(this.item);
           this.item.name="";
           this.item.category="";
+          this.item.picked=""; //clear text fields again
           alert("I am in the DB .... :-) Item saved successfully")
           
         }
@@ -64,6 +83,12 @@ label{
 }
 input[type="text"]{
     display: inline-block;
+    padding: 8px;
+    width:50%;
+}
+
+select{
+  display: inline-block;
     padding: 8px;
     width:50%;
 }
