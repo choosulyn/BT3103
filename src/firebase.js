@@ -3,15 +3,14 @@ import firebase from 'firebase';
 const firebaseConfig = {
     //Key in your database details
 
-
-    apiKey: "AIzaSyAHdOphsBlTBgASyQUkShjyfOpumJAmfQU",
-    authDomain: "bt3103-grocery-c92c1.firebaseapp.com",
-    databaseURL: "https://bt3103-grocery-c92c1.firebaseio.com",
-    projectId: "bt3103-grocery-c92c1",
-    storageBucket: "bt3103-grocery-c92c1.appspot.com",
-    messagingSenderId: "764869484450",
-    appId: "1:764869484450:web:be6c181e18c23c6fe35cfb",
-    measurementId: "G-D5GHVKMSBW"
+    apiKey: "AIzaSyDWEsTvJANAXhyicjXhmVzbPtvQyylWHVk",
+    authDomain: "bt3103-30b6d.firebaseapp.com",
+    databaseURL: "https://bt3103-30b6d.firebaseio.com",
+    projectId: "bt3103-30b6d",
+    storageBucket: "bt3103-30b6d.appspot.com",
+    messagingSenderId: "377447018421",
+    appId: "1:377447018421:web:ce44bc6121580c7a2233fc",
+    measurementId: "G-115YC6YJ5R"
   
   };
   
